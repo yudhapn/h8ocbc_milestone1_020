@@ -3,28 +3,32 @@ import app
 import unittest
 
 class Test_Movies(unittest.TestCase):
-    def test_read_all(self):
+    # test case for checking if response code get all movies endpoint is 200 (Success)
+    def test_read_all_succeeded(self):
         connext_app = app.connex_app
         client = connext_app.app.test_client()
         url = '/api/movies'
         response = client.get(url)
         assert response.status_code == 200
 
-    def test_read_top_rated(self):
+    # test case for checking if response code get top rated movies endpoint is 200 (Success)
+    def test_read_top_rated_is_succeeded(self):
         connext_app = app.connex_app
         client = connext_app.app.test_client()
         url = '/api/movies/top_rated'
         response = client.get(url)
         assert response.status_code == 200
 
-    def test_read_popular(self):
+    # test case for checking if response code get popular movies endpoint is 200 (Success)
+    def test_read_popular_is_succeeded(self):
         connext_app = app.connex_app
         client = connext_app.app.test_client()
         url = '/api/movies/popular'
         response = client.get(url)
         assert response.status_code == 200
 
-    def test_read_by_title(self):
+    # test case for checking if response code get movies by title endpoint is 200 (Success)
+    def test_read_by_title_is_succeeded(self):
         connext_app = app.connex_app
         client = connext_app.app.test_client()
         url = '/api/movies/avatar'
@@ -32,22 +36,24 @@ class Test_Movies(unittest.TestCase):
         assert response.status_code == 200
 
 class Test_Director(unittest.TestCase):
-    def test_read_all(self):
+    # test case for checking if response code get all directors endpoint is 200 (Success)
+    def test_read_all_is_succeeded(self):
         connext_app = app.connex_app
         client = connext_app.app.test_client()
         url = '/api/director'
         response = client.get(url)
         assert response.status_code == 200
 
-    def test_read_one(self):
+    # test case for checking if response code get a director endpoint is 200 (Success)
+    def test_read_one_is_succeeded(self):
         connext_app = app.connex_app
         client = connext_app.app.test_client()
         url = '/api/director/7110'
-
         response = client.get(url)
         assert response.status_code == 200
 
-    def test_read_by_name(self):
+    # test case for checking if response code get directors by name endpoint is 200 (Success)
+    def test_read_by_name_is_succeeded(self):
         connext_app = app.connex_app
         client = connext_app.app.test_client()
         url = '/api/director/search/james'
